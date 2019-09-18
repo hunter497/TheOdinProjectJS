@@ -17,26 +17,28 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="book-list">
+  <div class="main-container">
+      <div class="book-list">
+        </div>
+        <button id="newBookFormButton">NEW BOOK</button>
+        <form id="newBookForm" class="hide">
+          <fieldset>
+              <legend>Add New Book</legend>
+            <label>Title:</label>
+            <input type="text" name="title" placeholder="Moby Dick"/>
+            <br>
+            <label>Author:</label>
+            <input type="text" name="author" placeholder="Herman Melville"/>
+            <br>
+            <label>Pages:</label>
+            <input type="text" name="pages" placeholder="585"/>
+            <br>
+            <label>Have you read it?</label>
+            <input type="checkbox" name="read" />
+            <br>
+            <input type="submit" value="Add New Book"/>
+          </fieldset>
+        </form>
   </div>
-  <button id="newBookFormButton">NEW BOOK</button>
-  <form id="newBookForm" class="hide">
-    <fieldset>
-        <legend>Add New Book</legend>
-      <label>Title:</label>
-      <input type="text" name="title" placeholder="Moby Dick"/>
-      <br>
-      <label>Author:</label>
-      <input type="text" name="author" placeholder="Herman Melville"/>
-      <br>
-      <label>Pages:</label>
-      <input type="text" name="pages" placeholder="585"/>
-      <br>
-      <label>Have you read it?</label>
-      <input type="checkbox" name="read" />
-      <br>
-      <input type="submit" value="Add New Book"/>
-    </fieldset>
-  </form>
 </body>
 </html>

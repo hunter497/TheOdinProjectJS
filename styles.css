@@ -1,3 +1,12 @@
 .hide {
     display: none;
 }
+
+.book-card {
+    margin: 2rem;
+}
+
+.main-container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
