@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Odin Project</title>
+  <script type="text/javascript">
+    function downloadJSAtOnload() {
+     var element = document.createElement("script");
+     element.src = "book.js";
+     document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+     window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+     window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="book-list">
+  </div>
+  <button id="newBookFormButton">NEW BOOK</button>
+  <form id="newBookForm" class="hide">
+    <fieldset>
+        <legend>Add New Book</legend>
+      <label>Title:</label>
+      <input type="text" name="title" placeholder="Moby Dick"/>
+      <br>
+      <label>Author:</label>
+      <input type="text" name="author" placeholder="Herman Melville"/>
+      <br>
+      <label>Pages:</label>
+      <input type="text" name="pages" placeholder="585"/>
+      <br>
+      <label>Have you read it?</label>
+      <input type="checkbox" name="read" />
+      <br>
+      <input type="submit" value="Add New Book"/>
+    </fieldset>
+  </form>
+</body>
+</html>
