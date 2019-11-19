@@ -31,7 +31,6 @@ function toggleBookForm() {
 function deleteBook(element) {
   let bookCard = element.parentNode;
   myLibrary.splice(bookCard.dataset.libraryIndex, 1);
-  console.log(myLibrary);
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
   renderBookList();
 }
@@ -43,9 +42,7 @@ function readBook(element) {
 }
 
 function addBookToLibrary(book) {
-  console.log('Entered addBookToLibrary');
   myLibrary.push(book);
-  console.log('Saving book to local storage');
   localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
 }
 
@@ -110,7 +107,6 @@ function renderBookFormHandler() {
 // Rendering
 
 function renderBookList() {
-  console.log('Rendering library books');
   let bookList = document.querySelector('.book-list');
   bookList.innerHTML = myLibrary.map((book, index) => {
     // Would like to clean this up, pass a template in instead of this long string
