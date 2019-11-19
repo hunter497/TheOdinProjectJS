@@ -68,7 +68,7 @@ function init() {
 }
 
 // Event Handlers
-
+// TODO: Split out static event handlers and book list event handlers
 function addEventHandlers() {
   renderBookFormHandler();
   addBookHandler();
