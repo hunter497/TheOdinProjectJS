@@ -65,7 +65,6 @@ function populateMyLibrary() {
 function init() {
   populateMyLibrary();
   renderBookList();
-  addEventHandlers();
 }
 
 // Event Handlers
@@ -112,6 +111,7 @@ function renderBookList() {
     // Would like to clean this up, pass a template in instead of this long string
     return '<div class="book-card" data-library-index="' + index + '"><div class="book-info">' + book.info() + '</div><button class="read-book">' + (!book.read ? "I've read this book" : "I haven't read this book") +'</button><button class="delete-book">Remove book from my library</button></div>';
   }).join('');
+  addEventHandlers();
 }
 
 // Test functionality
