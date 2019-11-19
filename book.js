@@ -51,7 +51,7 @@ function deleteBook(element) {
 
 function readBook(element) {
   let bookCard = element.parentNode;
-  myLibrary[bookCard.dataset.libraryIndex].read = true;
+  myLibrary[bookCard.dataset.libraryIndex].toggleReadBook();
   renderBookList();
 }
 
