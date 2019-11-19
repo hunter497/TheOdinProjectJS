@@ -1,2 +1,2 @@
 # TheOdinProjectJS
-Playing around with Odin Project Javascript exercises!
+Playing around with Odin Project JavaScript exercises!
