@@ -3,23 +3,18 @@
 let myLibrary = [];
 
 
-// Book data structure
+// Book data structure - Using factory methods
 
-class Book {
-  constructor(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+const Book = (title, author, pages, read) => {
+  const info = () => {
+    return `${title}, by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
   }
 
-  info() {
-    return `${this.title}, by ${this.author}, ${this.pages} pages, ${this.read ? 'read' : 'not read yet'}`;
+  const toggleReadBook = () => {
+    read = !read;
   }
 
-   toggleReadBook() {
-     this.read = !this.read;
-   }
+  return { title, author, pages, read, info, toggleReadBook }
 }
 
 // Class & Model Functions
@@ -51,7 +46,7 @@ function addBookToLibrary(book) {
 function populateMyLibrary() {
   if(localStorage.getItem('myLibrary')) {
     JSON.parse(localStorage.getItem('myLibrary')).forEach((book) => {
-      libraryBook = new Book(book.title, book.author, book.pages, book.read);
+      libraryBook = Book(book.title, book.author, book.pages, book.read);
       myLibrary.push(libraryBook);
     })
   } else {
@@ -79,7 +74,7 @@ function addEventHandlers() {
 function addBookHandler() {
   let form = document.getElementById('newBookForm');
   form.onsubmit = () => {
-    book = new Book(form.elements.title.value, form.elements.author.value, form.elements.pages.value, form.elements.read.value)
+    let book = Book(form.elements.title.value, form.elements.author.value, form.elements.pages.value, form.elements.read.value)
     addBookToLibrary(book);
   }
 }
@@ -117,10 +112,10 @@ function renderBookList() {
 // Test functionality
 
 function fakeLibrary() {
-  const myBook = new Book('Moby Dick', 'Herman Melville', 585, false);
-  const myBook2 = new Book('Moby Dick2', 'Herman Melville', 585, false);
-  const myBook3 = new Book('Moby Dick3', 'Herman Melville', 585, false);
-  const myBook4 = new Book('Moby Dick4', 'Herman Melville', 585, false);
+  const myBook = Book('Moby Dick', 'Herman Melville', 585, false);
+  const myBook2 = Book('Moby Dick2', 'Herman Melville', 585, false);
+  const myBook3 = Book('Moby Dick3', 'Herman Melville', 585, false);
+  const myBook4 = Book('Moby Dick4', 'Herman Melville', 585, false);
   addBookToLibrary(myBook);
   addBookToLibrary(myBook2);
   addBookToLibrary(myBook3);
